@@ -1,0 +1,632 @@
+{
+
+  "HRD TEST": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "20,Connect Master BMS Most Positive with Fuse, Most Negative & CV Harness with PCB.",
+      "30,Connect to tester and start test",
+      "40,Disconnect the Battery from tester and Move to next station"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Connect Master BMS Most Positive with Fuse, Most Negative & CV Harness with PCB."
+      "40, Connect to tester and start test",
+      "50, Disconnect the Battery from tester and Move to next station"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Assemble the top & Bottom module over each other",
+      "40,Tight the Screw of stud and Busbar",
+      "50, Move the battery to next station"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Connect to tester and start test",
+      "40, Disconnect the Battery from tester and Move to next station"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Connect the Master BMS to Module",
+      "40,Connect the Power connector to tester and start the test",
+      "50,Disconnect the battery from tester and remove the Master BMS and send the battery to next step"
+    ]
+  },
+  "HOUSING INSERTING ": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Remove the BMS Setup and move the battery to next station"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Remove the BMS Setup and move the battery to next station"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Connect the Master BMS to Module Connect the Power connector to tester and start the test",
+      "40,Disconnect the battery from tester and remove the Master BMS and send the battery to next step"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "Remove the BMS Setup and move the battery to next station"
+
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Assemble the top & Bottom module over each other",
+      "40,Tight the Screw of stud, Busbar, PCB",
+      "50,Move the battery to next station"
+    ]
+  },
+  "PCM FILLING": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Place the BMS on PCB location and tight the 4 nos M3*6 Screw",
+      "40,Connect the Most negative busbar with PCB & BMS And tight the 2 nos M5 Screw & 1 nos Lock nut after that attached the 3 nos paste clamp at CV location",
+      "50,Move the battery to next station"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Place the BMS to the Location on PCB",
+      "40,Connect the BMS connection with Battery Connection(NTC & CV Connection)",
+      "50,Move the battery to the next station"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Place the BMS to the Location on PCB",
+      "40,Connect the BMS connection with Battery Connection(NTC & CV Connection)",
+      "50,Move the battery to the next station"
+    ]
+  },
+  "BMS CONNECTION": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Place the BMS on PCB location and tight the 4 nos M3*6 Screw",
+      "40,Connect the Most negative busbar with PCB & BMS And tight the 2 nos M5 Screw & 1 nos Lock nut after that attached the 3 nos paste clamp at CV location",
+      "50,Move the battery to next station"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Fill the PCM 2.6 Kg into the Battery",
+      "40,Kept the Idle of the battery approx 15 Min to Cool",
+      "50,Fill The Silicon 260 Gm and Kept the idle 20 Min to cool",
+      "60,Move the battery to next station"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Fill the PCM 2.6 Kg into the Battery",
+      "40,Kept the Idle of the battery approx 30 Min to Cool",
+      "50,Move the battery to next station"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Place the BMS on Cell Holder location and tight the 4 nos M3*6 Screw",
+      "40,Connect the Most negative busbar with BMS with 2 screw ",
+      "50,Connect Most Positive & negative power harness"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Fill the PCM 2.6 Kg into the Battery",
+      "40,Kept the Idle of the battery approx 30 Min to Cool",
+      "50,Move the battery to next station"
+    ]
+  },
+  "TOP COVER ATTACHEMENT": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Connect the power Harness (positive & negative- with 2 Hex jem nut & 1 M5*6 Screw)",
+      "40,Connect the IOT harness to BMS,Connect the can wire harness, Connect the SOC Harness",
+      "50,Move to next station"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Connect the power Harness (positive & negative- with 2 Hex jem nut & 1 M5*6 Screw)",
+      "40,Connect the IOT harness to BMS,Connect the can wire harness, Connect the SOC Harness",
+      "50,Move to next station"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Connect the Positive & Negative Power Connector to the BMS",
+      "40,Connect the Can Harness",
+      "50,Move the battery to next station"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Connect Most Positive & negative power harness",
+      "40,Connect CV,NTC,IOT, Buzzer, Bluetooth connector with BMS",
+      "50,Short the BMS to wake of BMS",
+      "60,Move to Next station"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Connect the Positive & Negative Power Connector to the BMS",
+      "40,Connect the Can Harness",
+      "50,Move the battery to next station"
+    ]
+  },
+  "ROUTING & GLUEING": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Routing with Cable tie",
+      "40,Gluing on all connector and Screw",
+      "50,BMS-IOT-Mapping in barcode application after that- Print the sticker and paste on top cover",
+      "60,Move to next station"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Routing with Cable tie",
+      "40,Gluing on all connector and Screw",
+      "50,BMS-IOT-Mapping in barcode application after that- Print the sticker and paste on top cover",
+      "60,Move to next station"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Routing with Cable tie",
+      "40,Gluing on all connector and Screw",
+      "50,BMS Mapping in barcode application after that- Print the sticker and paste on top cover",
+      "60,Move to next station"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Routing with Cable tie",
+      "40,Gluing on all connector and Screw & Housing Gasket",
+      "50,BMS-IOT-Mapping in barcode application after that- Print the sticker and paste on top cover",
+      "60,Move to next station"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Routing with Cable tie",
+      "40,Gluing on all connector and Screw",
+      "50,BMS Mapping in barcode application after that- Print the sticker and paste on top cover",
+      "60,Move to next station"
+    ]
+  },
+  "TOP COVER CLOSING": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,IOT Mapping on lime portal",
+      "40,Close the top Cover with gasket",
+      "50,Tight the 14 nos screw",
+      "60,Move to Next station"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,IOT Mapping on lime portal",
+      "40,Close the top Cover with gasket",
+      "50,Tight the 14 nos screw",
+      "60,Move to Next station"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Close the top Cover with gasket",
+      "40,Tight the 14 nos screw",
+      "50,Moove to Next station"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Close the top Cover with gasket",
+      "40,Tight the 14 nos screw",
+      "50,Moove to Next station"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id",
+      "30,Close the top Cover with gasket",
+      "40,Tight the 14 nos screw",
+      "50,Moove to Next station"
+    ]
+  },
+  "Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  },"Station1": {
+    "recipe_01": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_02": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_03": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_04": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ],
+    "recipe_05": [
+      "00,Wait For Home",
+      "10,Check Battery Present",
+      "20,Scan Battery Id"
+    ]
+  }
+}

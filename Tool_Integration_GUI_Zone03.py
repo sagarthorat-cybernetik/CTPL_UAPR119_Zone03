@@ -396,7 +396,9 @@ class GUI_load(QMainWindow):
             prev_station = self.paths_data.get("station_name", None)
             self.station_name = self.ui_second_window.station_name
             index = 1
-
+            if self.station_name is None:
+                QtWidgets.QMessageBox.information(self, "Error Saving Data", f"Please Select the Station Name")
+                return
             # Update paths.json with new data
             recipe_no = self.ui_second_window.recipe_no
             self.paths_data["station_name"] = self.station_name
@@ -414,6 +416,7 @@ class GUI_load(QMainWindow):
 
             # Reload input data and update UI
             self.Input_Data_Load()
+            self.loadDataFromFile(str(recipe_no))
             # Check restart condition
             if self.station_name == "08" or prev_station == "08":
                 self.msgBox.setText("Please Restart the Application.")
