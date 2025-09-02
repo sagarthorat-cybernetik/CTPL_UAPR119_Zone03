@@ -362,10 +362,11 @@ class GUI_load(QMainWindow):
             self.Current_Cycle_Time_lbl.setText(f" Current Cycle Time : {str(values[0][30 ])} Sec ")
 
             # PLan_prod_count
-            self.PLan_prod_count.setText(str(values[0][33]))
+            self.PLan_prod_count.setText(str(values[0][32]))
 
             # Actual_prod_count
-            self.Actual_prod_count.setText(str(values[0][34]))
+            self.Actual_prod_count.setText(str(values[0][33]))
+            self.Screw_position.setText(str(values[0][34]))
 
             if values[0][36] != self.temp:
                 self.loadDataFromFile(str(values[0][36]))
