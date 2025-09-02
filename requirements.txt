@@ -1,0 +1,9 @@
+PyQt5
+PyQtWebEngine
+opencv-python
+pyModbusTCP
+matplotlib
+pyodbc
+pandas
+pymupdf
+requests

@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>images_ICON/battery_img.jpg</file>
+    <file>images_ICON/Cybernetik_logo.jpg</file>
+    <file>images_ICON/Setting_off.jpeg</file>
+    <file>images_ICON/Setting_on.jpeg</file>
+    <file>images_ICON/battrix_logo.png</file>
+  </qresource>
+</RCC>

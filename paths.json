@@ -1,0 +1,81 @@
+{
+    "Root_Path": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/",
+    "Development_Path": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/",
+    "image_path": "C:/Users/Ctplvc2/PycharmProjects/Projects/UAPR119/STN_img/STN_01.png",
+    "inputs": {
+        "image_path": {
+            "recipe_01": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/1.png",
+            "recipe_02": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/2.png",
+            "recipe_03": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/3.png",
+            "recipe_04": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/4.png",
+            "recipe_05": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/5.png"
+        },
+        "label_text": "07",
+        "index": 1
+    },
+    "last_pdf_path": {
+        "recipe_01": "C:/Users/Sagar/Downloads/E-Ticket - Sagar Aaditys.pdf",
+        "recipe_02": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/pdf2.pdf",
+        "recipe_03": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/pdf3.pdf",
+        "recipe_04": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/pdf4.pdf",
+        "recipe_05": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/pdf5.pdf"
+    },
+    "table_data": {
+        "ONLY_RIL": [
+            "00,Wait For Home",
+            "10,Check For Station Active/Deactive",
+            "20,Wait For Station Ready and Battery Present",
+            "30,Wait For Battery ID Scan",
+            "40,Battery Screw Tighting In Progress",
+            "50,Battery Screw Tighting Complete",
+            "60,Generate SCADA Report",
+            "70,Operation Completed Ready For Conveyor Index",
+            "80,Conveyor Index Complete",
+            "90,Cycle Complete",
+            "110,1234"
+        ],
+        "general": [
+            "00,Wait For Home",
+            "10,Scan Battery Id",
+            "20,Step01 Chek All Nuggets Bottom Side & Top Side",
+            "30,Waitting For Double Hand Push Button",
+            "40,Complete Opration For Next Station",
+            "23,asf"
+        ],
+        "recipe_01": [
+            "00,Wait For Home",
+            "10,Scan Battery Id"
+        ],
+        "recipe_02": [
+            "00,Wait For Home",
+            "10,Scan Battery Id",
+            "20,Step01 Chek All Nuggets Bottom Side & Top Side"
+        ],
+        "recipe_03": [
+            "00,Wait For Home",
+            "10,Scan Battery Id",
+            "20,Step01 Chek All Nuggets Bottom Side & Top Side",
+            "30,Waitting For Double Hand Push Button",
+            "asdfasdf,asdfasdf"
+        ],
+        "recipe_04": [
+            "12,123",
+            "233,123"
+        ],
+        "recipe_05": [
+            "qsas,112as",
+            "q423,asdf",
+            "234,3sf",
+            "23,sdaf"
+        ]
+    },
+    "recipe_img_path": {
+        "Recipe_01": [
+            "E:\\Vikee Python\\Work_Station_GUI_Livgaurd\\SOP\\TERRA\\TERRA_STN_01.png",
+            "E:\\Vikee Python\\Work_Station_GUI_Livgaurd\\SOP\\TERRA\\TERRA_STN_01.png"
+        ]
+    },
+    "sop_img_path": "C:/Users/STN09/Desktop/SOP/4. OGS 200.1-200.10 Screw driver change.pdf",
+    "video_path": "C:/Users/Sagar/Videos/Screen Recordings/Screen Recording 2025-04-11 122342.mp4",
+    "station_name": null
+}
