@@ -1687,21 +1687,6 @@ selection-color: rgb(255, 78, 25);</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_8">
-          <property name="spacing">
-           <number>1</number>
-          </property>
-          <property name="leftMargin">
-           <number>11</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
           <item>
            <widget class="QLabel" name="Leakvalue">
             <property name="minimumSize">
@@ -1805,8 +1790,8 @@ selection-color: rgb(255, 78, 25);</string>
                         <rect>
                          <x>0</x>
                          <y>0</y>
-                         <width>607</width>
-                         <height>763</height>
+                         <width>596</width>
+                         <height>694</height>
                         </rect>
                        </property>
                       </widget>
@@ -1821,6 +1806,29 @@ selection-color: rgb(255, 78, 25);</string>
               </widget>
              </item>
             </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Maximize_pdf">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="contextMenuPolicy">
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(212, 212, 212)</string>
+            </property>
+            <property name="text">
+             <string>Maximize PDF</string>
+            </property>
            </widget>
           </item>
          </layout>
