@@ -321,9 +321,9 @@ class GUI_load(QMainWindow):
     # Update GUI value
     def update_gui(self, values):
         #
-        # with open('dummydata.json', 'r') as json_file:
-        #     values = json.load(json_file)
-        # values=values["values"]
+        with open('dummydata.json', 'r') as json_file:
+            values = json.load(json_file)
+        values=values["values"]
         # print(len(values[0]))
         # print(values)
         try:
@@ -372,6 +372,7 @@ class GUI_load(QMainWindow):
                 self.loadDataFromFile(str(values[0][36]))
                 self.IMG_load(str(values[0][36]))
                 self.load_pdf(str(values[0][36]))
+                self.load_previous_video(str(values[0][36]))
                 self.temp = values[0][36]
             # print(values[0][95])
             # values[0][95] = 1
@@ -523,7 +524,7 @@ class GUI_load(QMainWindow):
                 self.img_lbl.setPixmap(self.im)
                 self.img_lbl.setScaledContents(True)
             else:
-                img_path = os.path.join(self.paths_data["Root_Path"],"./demo.png")
+                img_path = os.path.join(self.paths_data["Root_Path"],"demo.png")
                 self.img_path = img_path
                 self.im = QtGui.QPixmap(self.img_path)
                 self.img_lbl.setPixmap(self.im)
@@ -684,6 +685,8 @@ class GUI_load(QMainWindow):
             if recipe_no not in recipes:
                 print("recipe_no not in recipes")
                 recipe_no = self.ui_second_window.recipe_no
+            with open('paths.json', 'w') as json_file:
+                json.dump(self.paths_data, json_file, indent=4)
             table_data = self.paths_data["table_data"][f"recipe_0{recipe_no}"]
             self.tableWidget.setRowCount(len(table_data))
             for row, line in enumerate(table_data):
@@ -784,7 +787,7 @@ class GUI_load(QMainWindow):
                 self.zoom_factor = 1.0
                 self.display_page()
             else:
-                self.pdf_path = os.path.join(self.paths_data["Root_Path"],"./demo.pdf")
+                self.pdf_path = os.path.join(self.paths_data["Root_Path"],"demo.pdf")
                 if os.path.exists(self.pdf_path):
                     self.doc = fitz.open(self.pdf_path)
                     self.zoom_factor = 1.0
@@ -948,8 +951,9 @@ class GUI_load(QMainWindow):
                 self.video_capture = cv2.VideoCapture(filename)
                 self.video_fps = self.video_capture.get(cv2.CAP_PROP_FPS)
                 try:
-                     # Save PDF path to JSON
-                    self.paths_data["video_path"] = filename
+                    # Save PDF path to JSON
+                    recipe_no = self.ui_second_window.recipe_no
+                    self.paths_data["video_path"][f"recipe_0{recipe_no}"] = filename
 
                     # Save updated JSON data to file
                     with open('paths.json', 'w') as json_file:
@@ -960,10 +964,18 @@ class GUI_load(QMainWindow):
         except Exception as e:
             print(f"Error During Open Video {e}")
 
-    def load_previous_video(self):
+
+    def load_previous_video(self,recipe_no="1"):
         try:
             # Load video path from paths.json
-            video_path = self.paths_data["video_path"] # Use .get() to avoid KeyError if the key doesn't exist
+            recipe_no = str(recipe_no)
+            recipes = ["1", "2", "3", "4", "5"]
+            video_path = os.path.join(self.paths_data["Development_Path"], "Video.mp4")
+            if recipe_no not in recipes:
+                recipe_no = self.ui_second_window.recipe_no
+                video_path = os.path.join(self.paths_data["Development_Path"], "Video.mp4")
+            else:
+                video_path = self.paths_data["video_path"][f"recipe_0{recipe_no}"]
             filename = video_path
             if filename:
                 self.video_capture = cv2.VideoCapture(filename)
