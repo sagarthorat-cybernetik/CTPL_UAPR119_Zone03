@@ -177,11 +177,12 @@ class GUI_load(QMainWindow):
         if not station_no:
             station_no = "01"
         start_reg = 0
+        self.root_Path = self.paths_data["Root_Path"]
         if station_no == "08":
             print("station 08")
-            ui_file = os.path.join("./Station_GUI_livgaurd_Z02_S08.ui")
+            ui_file = os.path.join(self.root_Path,"Station_GUI_livgaurd_Z02_S08.ui")
         else:
-            ui_file = os.path.join("./Station_GUI_Livgaurd_v02.ui")
+            ui_file = os.path.join(self.root_Path,"Station_GUI_Livgaurd_v02.ui")
 
         loadUi(ui_file, self)
 
@@ -515,7 +516,7 @@ class GUI_load(QMainWindow):
             if recipe_no not in recipes:
                 print("recipe_no not in recipes")
                 recipe_no = self.ui_second_window.recipe_no
-                img_path = os.path.join(self.paths_data["Root_Path"], "./invalid.png")
+                img_path = os.path.join(self.paths_data["Root_Path"], "invalid.png")
             else:
                 img_path = self.paths_data["inputs"]["image_path"][f"recipe_0{recipe_no}"]
             if os.path.exists(img_path):
@@ -779,7 +780,7 @@ class GUI_load(QMainWindow):
             if recipe_no not in recipes:
                 print("recipe_no not in recipes")
                 recipe_no = "0"
-                self.pdf_path = os.path.join(self.paths_data["Root_Path"],"./invalid.pdf")
+                self.pdf_path = os.path.join(self.paths_data["Root_Path"],"invalid.pdf")
             else:
                 self.pdf_path = self.paths_data["last_pdf_path"][f"recipe_0{recipe_no}"]
             if os.path.exists(self.pdf_path):
