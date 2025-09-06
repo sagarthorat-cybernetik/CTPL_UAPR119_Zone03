@@ -1,9 +1,25 @@
+# Core GUI
 PyQt5
 PyQtWebEngine
+
+# PDF rendering
+PyMuPDF   # provides "fitz"
+
+# Image & video
 opencv-python
-pyModbusTCP
-matplotlib
-pyodbc
-pandas
-pymupdf
+Pillow
+
+# Networking / HTTP
 requests
+pyModbusTCP
+pyodbc
+# Data handling
+openpyxl
+
+# Utilities
+shutilwhich  # only if you rely on shutil.which (else built-in shutil needs no install)
+
+# Optional: if you use charts later (commented OEE import)
+matplotlib
+
+# Date/time is builtin (datetime), struct, re, json, os, sys, threading, time → all stdlib
