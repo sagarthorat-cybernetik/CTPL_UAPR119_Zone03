@@ -255,7 +255,7 @@ class GUI_load(QMainWindow):
         self.ui_second_window.video_btn.clicked.connect(self.open_video_file)
         self.ui_second_window.pdf_Brows_btn.clicked.connect(self.Open_PDF)
         self.ui_second_window.input_setting_changes.clicked.connect(self.save_Input_setting_data)
-        self.ui_second_window.set_password.clicked.connect(self.loadDataFromFile)
+        self.ui_second_window.dataSaved.connect(self.loadDataFromFile)
 
 
         # Add Extra Material Here ---------
@@ -686,8 +686,10 @@ class GUI_load(QMainWindow):
             if recipe_no not in recipes:
                 print("recipe_no not in recipes")
                 recipe_no = self.ui_second_window.recipe_no
-            with open('paths.json', 'w') as json_file:
-                json.dump(self.paths_data, json_file, indent=4)
+                # Save updated JSON data to file
+            with open('paths.json', 'r') as json_file:
+                self.paths_data = json.load(json_file)
+
             table_data = self.paths_data["table_data"][f"recipe_0{recipe_no}"]
             self.tableWidget.setRowCount(len(table_data))
             for row, line in enumerate(table_data):
