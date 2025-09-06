@@ -5,7 +5,7 @@
     "inputs": {
         "image_path": {
             "recipe_01": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/1.png",
-            "recipe_02": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/2.png",
+            "recipe_02": "D:/Program/CTPL_UAPR119/SOP/Recipe_01/image (2).png",
             "recipe_03": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/3.png",
             "recipe_04": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/4.png",
             "recipe_05": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/5.png"
@@ -15,7 +15,7 @@
     },
     "last_pdf_path": {
         "recipe_01": "C:/Users/Sagar/Downloads/E-Ticket - Sagar Aaditys.pdf",
-        "recipe_02": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/pdf2.pdf",
+        "recipe_02": "D:/Program/CTPL_UAPR119/SOP/4. OGS 200.1-200.10.pdf",
         "recipe_03": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/pdf3.pdf",
         "recipe_04": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/pdf4.pdf",
         "recipe_05": "D:/Sagar_OneDrive/OneDrive - Cybernetik Technologies Pvt Ltd/cybernetik/onsite/UAPR119/Zone3/CTPL_UAPR119_Zone03/SOP/pdf5.pdf"
@@ -44,7 +44,9 @@
         ],
         "recipe_01": [
             "00,Wait For Home",
-            "10,Scan Battery Id"
+            "10,Scan Battery Id",
+            "123,12312",
+            "233,3sf"
         ],
         "recipe_02": [
             "00,Wait For Home",
@@ -76,6 +78,12 @@
         ]
     },
     "sop_img_path": "C:/Users/STN09/Desktop/SOP/4. OGS 200.1-200.10 Screw driver change.pdf",
-    "video_path": "C:/Users/Sagar/Videos/Screen Recordings/Screen Recording 2025-04-11 122342.mp4",
-    "station_name": null
+    "video_path": {
+        "recipe_01": "C:/Users/Sagar/Videos/Screen Recordings/flytBase VideoDemo.mp4",
+        "recipe_02": "C:/Users/Sagar/Videos/Screen Recordings/Screen Recording 2025-04-07 164253.mp4",
+        "recipe_03": "C:/Users/Sagar/Videos/Screen Recordings/Screen Recording 2025-04-09 124441.mp4",
+        "recipe_04": "C:/Users/Sagar/Videos/Screen Recordings/Screen Recording 2025-04-11 110118.mp4",
+        "recipe_05": "C:/Users/Sagar/Videos/Screen Recordings/Screen Recording 2025-04-30 154041.mp4"
+    },
+    "station_name": "02"
 }
