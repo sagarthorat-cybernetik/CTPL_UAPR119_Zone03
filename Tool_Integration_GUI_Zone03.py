@@ -317,12 +317,14 @@ class GUI_load(QMainWindow):
         self.on_user_input_changed('00')
 
     def handle_housing_ack(self):
-        print(f"in 943 wrote 1")
         if self.buttonpressed:
             self.modbus_worker.client.write_single_register(943, 1)
+            print(f"in 943 wrote 1")
             self.buttonpressed = True
         else:
             self.modbus_worker.client.write_single_register(943, 0)
+            print(f"in 943 wrote 0")
+
             self.buttonpressed = False
 
     def handle_cycle_com_ack(self):
