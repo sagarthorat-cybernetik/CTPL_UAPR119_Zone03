@@ -318,7 +318,13 @@ class GUI_load(QMainWindow):
 
     def handle_housing_ack(self):
         print(f"in 943 wrote 1")
-        self.modbus_worker.client.write_single_register(943, 1)
+        if self.buttonpressed:
+            self.modbus_worker.client.write_single_register(943, 1)
+            self.buttonpressed = True
+        else:
+            self.modbus_worker.client.write_single_register(943, 0)
+            self.buttonpressed = False
+
     def handle_cycle_com_ack(self):
         print(f"in 944 wrote 1")
 
