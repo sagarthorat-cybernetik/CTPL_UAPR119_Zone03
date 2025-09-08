@@ -166,6 +166,7 @@ class ModbusWorker(QThread):
 class GUI_load(QMainWindow):
     def __init__(self):
         # Load paths.json file
+        self.buttonpressed = True
         self.station_name = None
         self.new_img_path = None
         with open('paths.json', 'r') as json_file:
@@ -320,12 +321,11 @@ class GUI_load(QMainWindow):
         if self.buttonpressed:
             self.modbus_worker.client.write_single_register(943, 1)
             print(f"in 943 wrote 1")
-            self.buttonpressed = True
+            self.buttonpressed = False
         else:
             self.modbus_worker.client.write_single_register(943, 0)
             print(f"in 943 wrote 0")
-
-            self.buttonpressed = False
+            self.buttonpressed = True
 
     def handle_cycle_com_ack(self):
         print(f"in 944 wrote 1")
