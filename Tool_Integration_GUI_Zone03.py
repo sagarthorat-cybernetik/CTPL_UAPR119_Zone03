@@ -319,18 +319,21 @@ class GUI_load(QMainWindow):
 
     def handle_housing_ack(self):
         if self.buttonpressed:
-            self.modbus_worker.client.write_single_register(943, 1)
+            self.modbus_worker.client.write_single_register(843, 1)
+            # change the backgroud color to green and red
+            self.housing_ack.setStyleSheet("background-color: green; color: white;")
             print(f"in 943 wrote 1")
             self.buttonpressed = False
         else:
-            self.modbus_worker.client.write_single_register(943, 0)
+            self.modbus_worker.client.write_single_register(843, 0)
+            self.housing_ack.setStyleSheet("background-color: red; color: white;")
             print(f"in 943 wrote 0")
             self.buttonpressed = True
 
     def handle_cycle_com_ack(self):
         print(f"in 944 wrote 1")
 
-        self.modbus_worker.client.write_single_register(944, 1)
+        self.modbus_worker.client.write_single_register(844, 1)
     def open_setting(self):
         self.ui_second_window.show()
 

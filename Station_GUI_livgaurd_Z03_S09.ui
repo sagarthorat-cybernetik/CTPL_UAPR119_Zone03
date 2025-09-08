@@ -926,7 +926,7 @@
 selection-color: rgb(255, 78, 25);</string>
                  </property>
                  <property name="text">
-                  <string>manual housing station enable</string>
+                  <string>Manual Housing Station Enable</string>
                  </property>
                  <property name="checkable">
                   <bool>false</bool>
@@ -968,7 +968,7 @@ selection-color: rgb(255, 78, 25);</string>
                   <string notr="true">background-color: rgb(214, 214, 214);</string>
                  </property>
                  <property name="text">
-                  <string>Cycle complete Ack</string>
+                  <string>Cycle Complete Ack</string>
                  </property>
                  <property name="checkable">
                   <bool>false</bool>
