@@ -180,9 +180,13 @@ class GUI_load(QMainWindow):
         self.root_Path = self.paths_data["Root_Path"]
         if station_no == "08":
             print("station 08")
-            ui_file = os.path.join(self.root_Path,"Station_GUI_livgaurd_Z02_S08.ui")
+            ui_file = os.path.join(self.root_Path,"Station_GUI_livgaurd_Z03_S08.ui")
+        elif station_no == "09":
+            ui_file = os.path.join(self.root_Path, "Station_GUI_livgaurd_Z03_S09.ui")
+        elif station_no == "10":
+            ui_file = os.path.join(self.root_Path, "Station_GUI_livgaurd_Z03_S10.ui")
         else:
-            ui_file = os.path.join(self.root_Path,"Station_GUI_Livgaurd_v02.ui")
+            ui_file = os.path.join(self.root_Path,"Station_GUI_Livgaurd_Z03.ui")
 
         loadUi(ui_file, self)
 
@@ -300,7 +304,9 @@ class GUI_load(QMainWindow):
 
         self.Input_Data_Load()
         self.load_previous_video()
-
+        if station_no == "09":
+            self.housing_ack.clicked.connect(self.handle_housing_ack)
+            self.cycle_com_ack.clicked.connect(self.handle_cycle_com_ack)
         # PLC connection class call pass ip and port
         self.modbus_worker = ModbusWorker(host="192.168.205.161", port=502)
         self.modbus_worker.update_gui_signal.connect(self.update_gui)
@@ -310,6 +316,13 @@ class GUI_load(QMainWindow):
         self.temp = 0
         self.on_user_input_changed('00')
 
+    def handle_housing_ack(self):
+        print(f"in 943 wrote 1")
+        self.modbus_worker.client.write_single_register(943, 1)
+    def handle_cycle_com_ack(self):
+        print(f"in 944 wrote 1")
+
+        self.modbus_worker.client.write_single_register(944, 1)
     def open_setting(self):
         self.ui_second_window.show()
 
@@ -321,7 +334,9 @@ class GUI_load(QMainWindow):
 
     # Update GUI value
     def update_gui(self, values):
-
+        # with open('dummydata.json', 'r') as json_file:
+        #     values = json.load(json_file)
+        # values = values["values"]
         # print(len(values[0]))
         # print(values)
         try:
@@ -364,7 +379,13 @@ class GUI_load(QMainWindow):
 
             # Actual_prod_count
             self.Actual_prod_count.setText(str(values[0][33]))
-            self.Screw_position.setText(str(values[0][34]))
+            special_staions=["08","09","10","11","12","13"]
+            if self.station_name not in special_staions:
+                self.Screw_position.setText(str(values[0][34]))
+
+            if self.station_name == "10":
+                self.Housing_laser_status.setText("OK" if values[0][37] == 1 else "NOT OK")
+                self.Top_laser_status.setText("OK" if values[0][38] == 1 else "NOT OK")
 
             if values[0][36] != self.temp:
                 self.loadDataFromFile(str(values[0][36]))

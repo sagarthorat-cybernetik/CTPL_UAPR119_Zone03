@@ -88,7 +88,7 @@ class ModbusWorker(QThread):
 class GUI_load(QMainWindow):
     def __init__(self):
         super(GUI_load, self).__init__()
-        ui_file = os.path.join("./Station_GUI_Livgaurd_v02.ui")
+        ui_file = os.path.join("Station_GUI_livgaurd_Z03.ui")
         loadUi(ui_file, self)
 
         # Load paths.json file
