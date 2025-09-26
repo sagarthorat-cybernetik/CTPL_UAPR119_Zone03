@@ -860,6 +860,46 @@
            </spacer>
           </item>
           <item>
+           <widget class="QLabel" name="Current_Cycle_Time_lbl_2">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(214, 214, 214);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="text">
+             <string>पुनः कार्य परीक्षण के लिए, दाएं हाथ  से पुष्टिकरण 
+बटन और स्वीकृति बटन को एक बार में 
+5 सेकंड के लिए दबाएं</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin">
+             <number>10</number>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="Current_Cycle_Time_lbl">
             <property name="minimumSize">
              <size>
