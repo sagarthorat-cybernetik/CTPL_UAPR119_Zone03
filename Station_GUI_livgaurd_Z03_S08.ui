@@ -875,7 +875,7 @@
             </property>
             <property name="font">
              <font>
-              <pointsize>12</pointsize>
+              <pointsize>14</pointsize>
               <weight>75</weight>
               <bold>true</bold>
              </font>
@@ -888,7 +888,7 @@
             </property>
             <property name="text">
              <string>पुनः कार्य परीक्षण के लिए, दाएं हाथ  से पुष्टिकरण 
-बटन और स्वीकृति बटन को एक बार में 
+बटन और स्वीकृति बटन को  एक साथ 
 5 सेकंड के लिए दबाएं</string>
             </property>
             <property name="alignment">
