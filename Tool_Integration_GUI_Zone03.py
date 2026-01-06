@@ -179,8 +179,8 @@ class GUI_load(QMainWindow):
             station_no = "01"
         start_reg = 0
         self.root_Path = self.paths_data["Root_Path"]
-        if station_no == "08":
-            print("station 08")
+        if station_no == "10":
+            print("station 10")
             ui_file = os.path.join(self.root_Path,"Station_GUI_livgaurd_Z03_S08.ui")
         elif station_no == "09":
             ui_file = os.path.join(self.root_Path, "Station_GUI_livgaurd_Z03_S09.ui")
@@ -394,7 +394,7 @@ class GUI_load(QMainWindow):
             if self.station_name not in special_staions:
                 self.Screw_position.setText(str(values[0][34]))
 
-            if self.station_name == "10":
+            if self.station_name == "11":
                 self.Housing_laser_status.setText("OK" if values[0][37] == 1 else "NOT OK")
                 self.Top_laser_status.setText("OK" if values[0][38] == 1 else "NOT OK")
 
@@ -449,7 +449,7 @@ class GUI_load(QMainWindow):
             self.Input_Data_Load()
             self.loadDataFromFile(str(recipe_no))
             # Check restart condition
-            if self.station_name == "08" or prev_station == "08":
+            if self.station_name == "10" or prev_station == "10":
                 self.msgBox.setText("Please Restart the Application.")
                 self.msgBox.setWindowTitle("Success")
                 self.msgBox.setStandardButtons(QtWidgets.QMessageBox.Ok)
@@ -487,20 +487,22 @@ class GUI_load(QMainWindow):
             elif self.station_name == "09":
                 self.Station_lbl.setText("Station : Manually Housing Insertion Station")
             elif self.station_name == "10":
-                self.Station_lbl.setText("Station : Laser Marking Station")
+                self.Station_lbl.setText("Station : Leak Testing Station")
             elif self.station_name == "11":
-                self.Station_lbl.setText("Station : EOL Station")
+                self.Station_lbl.setText("Station : Laser Marking Station")
             elif self.station_name == "12":
-                self.Station_lbl.setText("Station : PDI Station")
+                self.Station_lbl.setText("Station : EOL Station")
             elif self.station_name == "13":
-                self.Station_lbl.setText("Station : Battery Pack 1 Station")
+                self.Station_lbl.setText("Station : PDI Station")
             elif self.station_name == "14":
-                self.Station_lbl.setText("Station : Battery Pack 2 Station")
+                self.Station_lbl.setText("Station : Battery Pack 1 Station")
             elif self.station_name == "15":
-                self.Station_lbl.setText("Station : Battery Pack 3 Station")
+                self.Station_lbl.setText("Station : Battery Pack 2 Station")
             elif self.station_name == "16":
-                self.Station_lbl.setText("Station : Battery Pack 4 Station")
+                self.Station_lbl.setText("Station : Battery Pack 3 Station")
             elif self.station_name == "17":
+                self.Station_lbl.setText("Station : Battery Pack 4 Station")
+            elif self.station_name == "18":
                 self.Station_lbl.setText("Station : xxxxxxxxxxxxxxxxxxxxxxxxxx")
             elif self.station_name == "18":
                 self.Station_lbl.setText("Station : xxxxxxxxxxxxxxxxxxxxxxxxxx")
