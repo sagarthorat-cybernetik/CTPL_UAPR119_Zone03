@@ -887,6 +887,16 @@ class GUI_load(QMainWindow):
                     time.sleep(1)
                     self.modbus_worker.client.write_single_register(795, 0)
                 else:
+                    leak_data = float(9999.9)
+                    self.Leakvalue.setText(f"Leak Value: {leak_data} △Pa")
+                    self.modbus_worker.client.write_single_register(796, 1)
+                    modbus_registers = [self.float_to_modbus(leak_data)]
+                    # print("this is modubus register value",modbus_registers)
+                    # Print results
+                    self.modbus_worker.client.write_single_register(797, modbus_registers[0][1])
+                    self.modbus_worker.client.write_single_register(798, modbus_registers[0][0])
+                    time.sleep(1)
+                    self.modbus_worker.client.write_single_register(795, 0)
                     print("leak value not fount")
             else:
                 print(f"Failed to read data {respose.status_code}")
