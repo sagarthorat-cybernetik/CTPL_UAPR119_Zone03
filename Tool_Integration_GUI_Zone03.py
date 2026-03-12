@@ -19,6 +19,7 @@ from PyQt5.QtCore import QUrl, QTimer, QDateTime, Qt, QPoint, QThread, pyqtSigna
 import requests
 import re
 import struct
+from datetime import datetime
 
 class PDFViewer(QWidget):
     def __init__(self, pdf_path, parent=None):
@@ -316,6 +317,7 @@ class GUI_load(QMainWindow):
         self.tool_data = True
         self.temp = 0
         self.on_user_input_changed('00')
+        self.meter_lock = threading.Lock()
 
     def handle_housing_ack(self):
         if self.buttonpressed:
@@ -383,7 +385,7 @@ class GUI_load(QMainWindow):
             self.on_user_input_changed(text = str(values[0][29]))
 
             # current cycle time
-            self.Current_Cycle_Time_lbl.setText(f" Current Cycle Time : {str(values[0][30 ])} Sec ")
+            self.Current_Cycle_Time_lbl.setText(f" Current Cycle Time : {str(values[0][30])} Sec ")
 
             # PLan_prod_count
             self.PLan_prod_count.setText(str(values[0][32]))
@@ -407,8 +409,10 @@ class GUI_load(QMainWindow):
             # print(values[0][95])
             # values[0][95] = 1
             if values[0][95] == 1:
-                threading.Thread(self.readwritemeterdata()).start()
-
+            #
+            #     threading.Thread(self.readwritemeterdata()).start()
+                if not self.meter_lock.locked():
+                    threading.Thread(target=self.readwritemeterdata).start()
             # Alarm status
             '''
             self.Alarm_Status(alarm = values[0][36])
@@ -483,11 +487,11 @@ class GUI_load(QMainWindow):
             elif self.station_name == "07":
                 self.Station_lbl.setText("Station : Top Cover Closing Station")
             elif self.station_name == "08":
-                self.Station_lbl.setText("Station : Leak Testing Station")
+                self.Station_lbl.setText("Station : ------------")
             elif self.station_name == "09":
                 self.Station_lbl.setText("Station : Manually Housing Insertion Station")
             elif self.station_name == "10":
-                self.Station_lbl.setText("Station : Leak Testing Station")
+                self.Station_lbl.setText("Station : Leak Testing Station"                                       )
             elif self.station_name == "11":
                 self.Station_lbl.setText("Station : Laser Marking Station")
             elif self.station_name == "12":
@@ -869,40 +873,45 @@ class GUI_load(QMainWindow):
         return registers
 
     def readwritemeterdata(self):
-        url = "http://192.168.205.185/report_test_res_last_1.txt"
-        try:
-            respose = requests.get(url, timeout=5)
-            if respose.status_code == 200:
-                data = respose.text
-                match = re.search(r"DL\s+([-+]?\d*\.\d+)", data)
-                if match:
-                    leak_data = float(match.group(1))
-                    self.Leakvalue.setText(f"Leak Value: {leak_data} △Pa")
-                    self.modbus_worker.client.write_single_register(796, 1)
-                    modbus_registers = [self.float_to_modbus(leak_data)]
-                    # print("this is modubus register value",modbus_registers)
-                    # Print results
-                    self.modbus_worker.client.write_single_register(797, modbus_registers[0][1])
-                    self.modbus_worker.client.write_single_register(798, modbus_registers[0][0])
-                    time.sleep(1)
-                    self.modbus_worker.client.write_single_register(795, 0)
+        with self.meter_lock:
+            url = "http://192.168.205.185/report_test_res_last_1.txt"
+            try:
+                respose = requests.get(url, timeout=5)
+                if respose.status_code == 200:
+                    data = respose.text
+                    # print(data)
+                    match = re.search(r"DL\s+([-+]?\d*\.\d+)", data)
+                    # print(match)
+                    if match:
+                        leak_data = float(match.group(1))
+                        self.Leakvalue.setText(f"Leak Value: {leak_data} △Pa")
+                        # print(f"Leak Value{ leak_data}")
+                        self.modbus_worker.client.write_single_register(996, 1)
+                        modbus_registers = [self.float_to_modbus(leak_data)]
+                        # print("this is modubus register value",modbus_registers)
+                        # Print results
+                        self.modbus_worker.client.write_single_register(797, modbus_registers[0][1])
+                        self.modbus_worker.client.write_single_register(798, modbus_registers[0][0])
+                        time.sleep(1)
+                        self.modbus_worker.client.write_single_register(995, 0)
+                        print(f"{datetime.now()}--Leak Value sent to PLC:{leak_data}")
+                    else:
+                        leak_data = float(9999.9)
+                        self.Leakvalue.setText(f"Leak Value: {leak_data} △Pa")
+                        self.modbus_worker.client.write_single_register(996, 1)
+                        modbus_registers = [self.float_to_modbus(leak_data)]
+                        # print("this is modubus register value",modbus_registers)
+                        # Print results
+                        self.modbus_worker.client.write_single_register(797, modbus_registers[0][1])
+                        self.modbus_worker.client.write_single_register(798, modbus_registers[0][0])
+                        time.sleep(1)
+                        self.modbus_worker.client.write_single_register(995, 0)
+                        print(f"{datetime.now()}--leak value not fount sent default value:{leak_data}")
                 else:
-                    leak_data = float(9999.9)
-                    self.Leakvalue.setText(f"Leak Value: {leak_data} △Pa")
-                    self.modbus_worker.client.write_single_register(796, 1)
-                    modbus_registers = [self.float_to_modbus(leak_data)]
-                    # print("this is modubus register value",modbus_registers)
-                    # Print results
-                    self.modbus_worker.client.write_single_register(797, modbus_registers[0][1])
-                    self.modbus_worker.client.write_single_register(798, modbus_registers[0][0])
-                    time.sleep(1)
-                    self.modbus_worker.client.write_single_register(795, 0)
-                    print("leak value not fount")
-            else:
-                print(f"Failed to read data {respose.status_code}")
+                    print(f"Failed to read data {respose.status_code}")
 
-        except Exception as e:
-            print(f"failed to read write {e}")
+            except Exception as e:
+                print(f"failed to read write {e}")
 
     def open_pdf_file(self):
         try:
